@@ -81,7 +81,7 @@ class ConversationInputAccessoryView: UIView {
         button.addTarget(self, action: #selector(didPressSend), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isEnabled = false
-        button.setTitleColor(DriftDataStore.sharedInstance.generateBackgroundColor(), for: .normal)
+        button.setTitleColor(ColorPalette.titleTextColor, for: .normal)
         button.setTitleColor(ColorPalette.subtitleTextColor, for: .disabled)
         button.contentEdgeInsets = UIEdgeInsets(top: 3, left: 8, bottom: 3, right: 8)
         
@@ -311,7 +311,7 @@ class ConversationInputAccessoryView: UIView {
     func updateSendButton(enabled: Bool) {
         sendButton.isEnabled = enabled
         if enabled {
-            sendButton.layer.borderColor = DriftDataStore.sharedInstance.generateBackgroundColor().cgColor
+            sendButton.layer.borderColor = ColorPalette.titleTextColor.cgColor
         } else {
             sendButton.layer.borderColor = ColorPalette.subtitleTextColor.cgColor
         }
